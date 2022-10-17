@@ -1,6 +1,6 @@
-import productsRouter from '@shared/modules/products/routes/products.routes';
-import sessionsRouter from '@shared/modules/users/routes/sessions.routes';
-import usersRouter from '@shared/modules/users/routes/users.routes';
+import productsRouter from 'src/modules/products/routes/products.routes';
+import sessionsRouter from 'src/modules/users/routes/sessions.routes';
+import usersRouter from 'src/modules/users/routes/users.routes';
 import { Router } from 'express';
 
 const routes = Router();
