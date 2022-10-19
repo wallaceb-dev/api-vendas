@@ -33,3 +33,5 @@ export class UsersRepository extends Repository<User> {
     return user;
   }
 }
+
+export default UsersRepository;
