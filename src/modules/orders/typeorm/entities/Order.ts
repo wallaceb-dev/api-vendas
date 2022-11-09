@@ -2,20 +2,22 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity('customers')
-class Customer {
+import Customer from '@modules/customers/typeorm/entities/Customer';
+
+@Entity('orders')
+class Order {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column()
-  name: string;
-
-  @Column()
-  email: string;
+  @ManyToOne(() => Customer)
+  @JoinColumn({ name: 'customer_id' })
+  customer: Customer;
 
   @CreateDateColumn()
   created_at: Date;
@@ -24,4 +26,4 @@ class Customer {
   updated_at: Date;
 }
 
-export default Customer;
+export default Order;
